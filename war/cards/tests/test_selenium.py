@@ -9,6 +9,7 @@ from ..models import Player
 class SeleniumTests(LiveServerTestCase):
     @classmethod
     def setUpClass(cls):
+        print 'SeleniumTests'
         cls.selenium = WebDriver()
         super(SeleniumTests, cls).setUpClass()
 
