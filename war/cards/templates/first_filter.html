@@ -1,7 +1,11 @@
+{% extends 'base_template.html' %}
 {% load list_filters %}
 
-{{ cards|first }}
 
-{% with cards|first as first_card %}
-    <p>Suit: {{ first_card.get_suit_display }}, Rank: {{ first_card.rank }}</p>
-{% endwith %}
+{% block content %}
+    {{ cards|first }}
+
+    {% with cards|first as first_card %}
+        <p>Suit: {{ first_card.get_suit_display }}, Rank: {{ first_card.rank }}</p>
+    {% endwith %}
+{% endblock content %}

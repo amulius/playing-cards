@@ -3,12 +3,15 @@
         color: blue;
     }
 </style>
+{% extends 'base_template.html' %}
 
+{% block content %}
+    It's {% now "SHORT_DATETIME_FORMAT" %}!
 
-It's {% now "SHORT_DATETIME_FORMAT" %}!
+    {% for card in cards %}
+        <p class="{% cycle 'even' 'odd' %}">
+            Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}
+        </p>
+    {% endfor %}
+{% endblock content %}
 
-{% for card in cards %}
-    <p class="{% cycle 'even' 'odd' %}">
-        Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}
-    </p>
-{% endfor %}

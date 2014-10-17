@@ -39,7 +39,7 @@ class Card(models.Model):
         my_ranking = self.get_ranking()
         card_to_check_ranking = card_to_check.get_ranking()
 
-        print my_ranking, card_to_check_ranking
+        # print my_ranking, card_to_check_ranking
 
         if my_ranking > card_to_check_ranking:
             return 1
@@ -54,6 +54,12 @@ class Card(models.Model):
 
 class Player(AbstractUser):
     phone = models.CharField(max_length=12, help_text="Format should be: 650-111-2222")
+
+    def get_results(self, result):
+        return WarGame.objects.filter(player=self, result=result).count()
+
+    def get_record_display(self):
+        return "{}-{}-{}".format(self.get_results(WarGame.WIN), self.get_results(WarGame.LOSS), self.get_results(WarGame.TIE))
 
 
 class WarGame(models.Model):

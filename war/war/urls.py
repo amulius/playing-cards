@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^$', 'cards.views.home', name='home'),
+    url(r'^deck/$', 'cards.views.deck', name='deck'),
     url(r'^filters/$', 'cards.views.filters', name='filters'),
     url(r'^tags/$', 'cards.views.template_tags', name='tags'),
     url(r'^first/filter/$', 'cards.views.first_filter', name='tags'),
