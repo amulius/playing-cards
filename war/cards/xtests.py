@@ -14,7 +14,7 @@
 # from cards.tests.utils import run_pyflakes_for_package, run_pep8_for_package
 # from cards.utils import create_deck
 
-
+# test stuff
 # class UtilTestCase(TestCase):
 #     def test_create_deck_count(self):
 #         self.assertEqual(Card.objects.count(), 0)
