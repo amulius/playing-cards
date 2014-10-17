@@ -1,6 +1,6 @@
 from django.test import TestCase
 from factories import WarGameFactory, PlayerFactory
-from ..models import Player, WarGame
+from ..models import WarGame
 
 
 class UserGetWinLossTestCase(TestCase):

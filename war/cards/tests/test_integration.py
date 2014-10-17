@@ -78,9 +78,6 @@ class ViewTestCase(TestCase):
         self.assertEqual(len(response.context['games']), 9)
         self.assertInHTML('<p>You Win-Loss-Tie ratio is 2-3-4</p>', response.content)
 
-
-
-
     def test_war_page(self):
         # Create user and log them in
         password = 'passsword'

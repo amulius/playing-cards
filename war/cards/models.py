@@ -59,7 +59,9 @@ class Player(AbstractUser):
         return WarGame.objects.filter(player=self, result=result).count()
 
     def get_record_display(self):
-        return "{}-{}-{}".format(self.get_results(WarGame.WIN), self.get_results(WarGame.LOSS), self.get_results(WarGame.TIE))
+        return "{}-{}-{}".format(self.get_results(WarGame.WIN),
+                                 self.get_results(WarGame.LOSS),
+                                 self.get_results(WarGame.TIE))
 
 
 class WarGame(models.Model):
